@@ -1,0 +1,14 @@
+<section>
+  <%= link("Write new article", to: "/articles/new") %>
+  <h1>
+    Recent articles
+  </h1>
+  <section>
+    <div>
+      <%= for article <- @articles do %>
+        <%= "#{article.inserted_at.month}/#{article.inserted_at.day}/#{article.inserted_at.year}" %>
+        <%= link(article.title, to: "/articles/#{article.id}") %><br/>
+      <% end %>
+    </div>
+  </section>
+</section>

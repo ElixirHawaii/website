@@ -1,0 +1,18 @@
+<section>
+  <%= link("Go back to recent articles", to: "/articles") %><br/>
+  <h1>
+    <%= @article.title %>
+  </h1>
+  <section>
+    <%= link("Edit", to: "/articles/#{@article.id}/edit") %>
+  </section>
+  <p>
+    Published <%= "#{@article.inserted_at.month}/#{@article.inserted_at.day}/#{@article.inserted_at.year}" %>
+  </p>
+  <hr>
+  <section>
+    <p>
+      <%= @article.content %>
+    </p>
+  </section>
+</section>

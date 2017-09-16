@@ -1,0 +1,23 @@
+<section>
+  <h1>
+    Edit article - <%= @article.title %>
+  </h1>
+  <section>
+    <%= form_for @changeset, article_path(@conn, :update, @article.id), fn f -> %>
+      <div>
+        <label>Title</label><br/>
+        <%= text_input f, :title %>
+      </div>
+
+      <br/>
+      
+      <div>
+        <label>Content</label><br/>
+        <%= textarea f, :content %>
+      </div>
+      <br/>
+
+      <%= submit "Save Article" %>
+    <% end %>
+  </section>
+</section>
