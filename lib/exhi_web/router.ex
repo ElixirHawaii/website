@@ -17,6 +17,13 @@ defmodule ExhiWeb.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+
+    get "/articles", ArticleController, :index
+    get "/articles/new", ArticleController, :new
+    get "/articles/:id", ArticleController, :show
+    get "/articles/:id/edit", ArticleController, :edit
+    put "/articles/:id", ArticleController, :update
+    post "/articles", ArticleController, :create
   end
 
   # Other scopes may use custom stacks.
